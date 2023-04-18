@@ -1,0 +1,485 @@
+[{
+		"name": "CVE-2022-002",
+		"score": 8.6,
+		"severity": "HIGH",
+		"vectors": "Cross-Site Scripting (XSS)",
+		"description": "Description of CVE-2022-002",
+		"score_v3": 9.3,
+		"vectors_v3": "Cross-Site Scripting (XSS)",
+		"sources": [{
+			"feed": "ubuntu",
+			"feed_version": "9.0",
+			"link": "http://whoami.com/CVE-2022-002",
+			"package_name": "openssl.js",
+			"package_version": "3.2.1",
+			"fixed_version": "3.3.0",
+			"rating": "5",
+			"published_timestamp": 1649464132,
+			"last_modified_timestamp": 1649464132,
+			"cpes": [
+				"CPE-2022-0055"
+			],
+			"cves": [
+				"CVE-2022-002"
+			]
+		}]
+	},
+	{
+		"name": "CVE-2022-003",
+		"score": 5.9,
+		"severity": "MEDIUM",
+		"vectors": "Session Hijacking",
+		"description": "Description of CVE-2022-003",
+		"score_v3": 6.5,
+		"vectors_v3": "Session Hijacking",
+		"sources": [{
+			"feed": "redhat",
+			"feed_version": "11.0",
+			"link": "http://whoami.com/CVE-2022-003",
+			"package_name": "apache.js",
+			"package_version": "1.2.3",
+			"fixed_version": "1.3.0",
+			"rating": "3",
+			"published_timestamp": 1645662532,
+			"last_modified_timestamp": 1645662532,
+			"cpes": [
+				"CPE-2022-0056"
+			],
+			"cves": [
+				"CVE-2022-003"
+			]
+		}]
+	},
+	{
+		"name": "CVE-2021-903",
+		"score": 7.2,
+		"severity": "HIGH",
+		"vectors": "SQL Injections",
+		"description": "Description of CVE-2021-903",
+		"score_v3": 6.6,
+		"vectors_v3": "SQL Injections",
+		"sources": [{
+				"feed": "redhat",
+				"feed_version": "10.3",
+				"link": "http://whoami.com/CVE-2021-903",
+				"package_name": "sqlite3.js",
+				"package_version": "1.0.2",
+				"rating": "3",
+				"published_timestamp": 1621729732,
+				"last_modified_timestamp": 1621729732,
+				"cpes": [
+					"CPE-2021-4443"
+				],
+				"cves": [
+					"CVE-2021-903"
+				]
+			},
+			{
+				"feed": "ubuntu",
+				"feed_version": "8.2",
+				"link": "http://whoami.com/CVE-2021-903",
+				"package_name": "sqlite3.js",
+				"package_version": "1.0.2",
+				"fixed_version": "1.2.3",
+				"rating": "3",
+				"published_timestamp": 1679538950,
+				"last_modified_timestamp": 1679542049,
+				"cpes": [
+					"CPE-2021-4443"
+				],
+				"cves": [
+					"CVE-2021-903"
+				]
+			}
+		]
+	},
+	{
+		"name": "CVE-2021-904",
+		"score": 8.2,
+		"severity": "HIGH",
+		"vectors": "Brute Force",
+		"description": "Description of CVE-2021-904",
+		"score_v3": 7.9,
+		"vectors_v3": "Brute Force",
+		"sources": [{
+			"feed": "redhat",
+			"feed_version": "10.3",
+			"link": "http://whoami.com/CVE-2021-903",
+			"package_name": "sqlite3.js",
+			"package_version": "1.0.2",
+			"fixed_version": "",
+			"rating": "3",
+			"published_timestamp": 1622334532,
+			"last_modified_timestamp": 1622334532,
+			"cpes": [
+				"CPE-2021-4443"
+			],
+			"cves": [
+				"CVE-2021-904"
+			]
+		}]
+	},
+	{
+		"name": "CVE-2021-905",
+		"score": 4.2,
+		"severity": "MEDIUM",
+		"vectors": "Distributed Denial of Service (DDoS)",
+		"description": "Description of CVE-2021-905",
+		"score_v3": 4.6,
+		"vectors_v3": "Distributed Denial of Service (DDoS)",
+		"sources": [{
+			"feed": "redhat",
+			"feed_version": "10.3",
+			"link": "http://whoami.com/CVE-2021-903",
+			"package_name": "sqlite3.js",
+			"package_version": "1.0.2",
+			"fixed_version": "1.2.3",
+			"rating": "3",
+			"published_timestamp": 1622420932,
+			"last_modified_timestamp": 1622420932,
+			"cpes": [
+				"CPE-2021-4443"
+			],
+			"cves": [
+				"CVE-2021-905"
+			]
+		}]
+	},
+  {
+		"name": "CVE-2022-693",
+		"score": 3.2,
+		"severity": "MEDIUM",
+		"vectors": "Man-in-the-Middle Attacks",
+		"description": "Description of CVE-2022-693",
+		"score_v3": 4.3,
+		"vectors_v3": "Man-in-the-Middle Attacks",
+		"sources": [{
+			"feed": "redhat",
+			"feed_version": "10.3",
+			"link": "http://whoami.com/CVE-2022-693",
+			"package_name": "sqlite3.js",
+			"package_version": "1.0.2",
+			"fixed_version": "1.2.3",
+			"rating": "3",
+			"published_timestamp": 1650846532,
+			"last_modified_timestamp": 1650846532,
+			"cpes": [
+				"CPE-2021-4443"
+			],
+			"cves": [
+				"CVE-2022-693"
+			]
+		},{
+			"feed": "ubuntu",
+			"feed_version": "10.3",
+			"link": "http://whoami.com/CVE-2022-693",
+			"package_name": "sqlite3.js",
+			"package_version": "1.0.2",
+			"fixed_version": "1.2.3",
+			"rating": "3",
+			"published_timestamp": 1653438532,
+			"last_modified_timestamp": 1653438532,
+			"cpes": [
+				"CPE-2021-4443"
+			],
+			"cves": [
+				"CVE-2022-693"
+			]
+		}]
+	},
+	{
+		"name": "CVE-2011-345",
+		"score": 6.2,
+		"severity": "HIGH",
+		"vectors": "Third and Fourth-Party Vendors",
+		"description": "Description of CVE-2011-345",
+		"score_v3": 8.6,
+		"vectors_v3": "Third and Fourth-Party Vendors",
+		"sources": [{
+			"feed": "Alpine",
+			"feed_version": "12.29",
+			"link": "http://whoami.com/CVE-2011-345",
+			"package_name": "sqlite3.js",
+			"package_version": "1.0.2",
+			"fixed_version": "1.2.3",
+			"rating": "3",
+			"published_timestamp": 1310430532,
+			"last_modified_timestamp": 1310430532,
+			"cpes": [
+				"CPE-2021-4443"
+			],
+			"cves": [
+				"CVE-2011-345"
+			]
+		}]
+	},
+	{
+		"name": "CVE-2018-655",
+		"score": 4.2,
+		"severity": "MEDIUM",
+		"vectors": "Phishing",
+		"description": "Description of CVE-2018-655",
+		"score_v3": 2.6,
+		"vectors_v3": "Phishing",
+		"sources": [{
+			"feed": "Alpine",
+			"feed_version": "12.29",
+			"link": "http://whoami.com/CVE-2018-655",
+			"package_name": "sqlite3.js",
+			"package_version": "1.0.2",
+			"fixed_version": "1.2.3",
+			"rating": "3",
+			"published_timestamp": 1534811332,
+			"last_modified_timestamp": 1534811332,
+			"cpes": [
+				"CPE-2021-4443"
+			],
+			"cves": [
+				"CVE-2018-655"
+			]
+		}]
+	},
+  {
+  		"name": "CVE-2012-002",
+  		"score": 8.6,
+  		"severity": "HIGH",
+  		"vectors": "Insider Threats",
+  		"description": "Description of CVE-2012-002",
+  		"score_v3": 9.3,
+  		"vectors_v3": "Insider Threats",
+  		"sources": [{
+  			"feed": "ubuntu",
+  			"feed_version": "9.0",
+  			"link": "http://whoami.com/CVE-2012-002",
+  			"package_name": "openssl.js",
+  			"package_version": "3.2.1",
+  			"fixed_version": "3.3.0",
+  			"rating": "5",
+  			"published_timestamp": 1348100932,
+  			"last_modified_timestamp": 1348100932,
+  			"cpes": [
+  				"CPE-2022-0055"
+  			],
+  			"cves": [
+  				"CVE-2012-002"
+  			]
+  		}]
+  	},
+  	{
+  		"name": "CVE-2021-003",
+  		"score": 5.9,
+  		"severity": "MEDIUM",
+  		"vectors": "Weak Credentials",
+  		"description": "Description of CVE-2021-003",
+  		"score_v3": 6.5,
+  		"vectors_v3": "Weak Credentials",
+  		"sources": [{
+  			"feed": "redhat",
+  			"feed_version": "11.0",
+  			"link": "http://whoami.com/CVE-2021-003",
+  			"package_name": "apache.js",
+  			"package_version": "1.2.3",
+  			"fixed_version": "1.3.0",
+  			"rating": "3",
+  			"published_timestamp": 1634257732,
+  			"last_modified_timestamp": 1634257732,
+  			"cpes": [
+  				"CPE-2022-0056"
+  			],
+  			"cves": [
+  				"CVE-2021-003"
+  			]
+  		}]
+  	},
+  	{
+  		"name": "CVE-2016-903",
+  		"score": 7.2,
+  		"severity": "HIGH",
+  		"vectors": "Compromised Credentials",
+  		"description": "Description of CVE-2016-903",
+  		"score_v3": 6.6,
+  		"vectors_v3": "Compromised Credentials",
+  		"sources": [{
+  				"feed": "redhat",
+  				"feed_version": "10.3",
+  				"link": "http://whoami.com/CVE-2016-903",
+  				"package_name": "sqlite3.js",
+  				"package_version": "1.0.2",
+  				"fixed_version": "1.2.3",
+  				"rating": "3",
+  				"published_timestamp": 1457828932,
+  				"last_modified_timestamp": 1457828932,
+  				"cpes": [
+  					"CPE-2021-4443"
+  				],
+  				"cves": [
+  					"CVE-2016-903"
+  				]
+  			},
+  			{
+  				"feed": "ubuntu",
+  				"feed_version": "8.2",
+  				"link": "http://whoami.com/CVE-2016-903",
+  				"package_name": "sqlite3.js",
+  				"package_version": "1.0.2",
+  				"fixed_version": "1.2.3",
+  				"rating": "3",
+  				"published_timestamp": 1466209732,
+  				"last_modified_timestamp": 1466209732,
+  				"cpes": [
+  					"CPE-2021-4443"
+  				],
+  				"cves": [
+  					"CVE-2016-903"
+  				]
+  			}
+  		]
+  	},
+  	{
+  		"name": "CVE-2019-904",
+  		"score": 8.2,
+  		"severity": "HIGH",
+  		"vectors": "Misconfiguration",
+  		"description": "Description of CVE-2019-904",
+  		"score_v3": 7.9,
+  		"vectors_v3": "Misconfiguration",
+  		"sources": [{
+  			"feed": "redhat",
+  			"feed_version": "10.3",
+  			"link": "http://whoami.com/CVE-2019-904",
+  			"package_name": "sqlite3.js",
+  			"package_version": "1.0.2",
+  			"fixed_version": "1.2.3",
+  			"rating": "3",
+  			"published_timestamp": 1562632132,
+  			"last_modified_timestamp": 1562632132,
+  			"cpes": [
+  				"CPE-2021-4443"
+  			],
+  			"cves": [
+  				"CVE-2019-904"
+  			]
+  		}]
+  	},
+  	{
+  		"name": "CVE-2023-905",
+  		"score": 4.2,
+  		"severity": "MEDIUM",
+  		"vectors": "Ransomware",
+  		"description": "Description of CVE-2023-905",
+  		"score_v3": 4.6,
+  		"vectors_v3": "Ransomware",
+  		"sources": [{
+  			"feed": "redhat",
+  			"feed_version": "10.3",
+  			"link": "http://whoami.com/CVE-2023-905",
+  			"package_name": "sqlite3.js",
+  			"package_version": "1.0.2",
+  			"fixed_version": "1.2.3",
+  			"rating": "3",
+  			"published_timestamp": 1677976132,
+  			"last_modified_timestamp": 1677976132,
+  			"cpes": [
+  				"CPE-2021-4443"
+  			],
+  			"cves": [
+  				"CVE-2023-905"
+  			]
+  		}]
+  	},
+    {
+  		"name": "CVE-2012-693",
+  		"score": 3.2,
+  		"severity": "MEDIUM",
+  		"vectors": "Vulnerabilities",
+  		"description": "Description of CVE-2012-693",
+  		"score_v3": 4.3,
+  		"vectors_v3": "Vulnerabilities",
+  		"sources": [{
+  			"feed": "redhat",
+  			"feed_version": "10.3",
+  			"link": "http://whoami.com/CVE-2012-693",
+  			"package_name": "sqlite3.js",
+  			"package_version": "1.0.2",
+  			"fixed_version": "1.2.3",
+  			"rating": "3",
+  			"published_timestamp": 1354235332,
+  			"last_modified_timestamp": 1354235332,
+  			"cpes": [
+  				"CPE-2021-4443"
+  			],
+  			"cves": [
+  				"CVE-2012-693"
+  			]
+  		},{
+  			"feed": "ubuntu",
+  			"feed_version": "10.3",
+  			"link": "http://whoami.com/CVE-2012-693",
+  			"package_name": "sqlite3.js",
+  			"package_version": "1.0.2",
+  			"fixed_version": "1.2.3",
+  			"rating": "3",
+  			"published_timestamp": 1343953732,
+  			"last_modified_timestamp": 1343953732,
+  			"cpes": [
+  				"CPE-2021-4443"
+  			],
+  			"cves": [
+  				"CVE-2012-693"
+  			]
+  		}]
+  	},
+  	{
+  		"name": "CVE-2018-345",
+  		"score": 6.2,
+  		"severity": "HIGH",
+  		"vectors": "Trojans",
+  		"description": "Description of CVE-2018-345",
+  		"score_v3": 8.6,
+  		"vectors_v3": "Trojans",
+  		"sources": [{
+  			"feed": "Alpine",
+  			"feed_version": "12.29",
+  			"link": "http://whoami.com/CVE-2018-345",
+  			"package_name": "sqlite3.js",
+  			"package_version": "1.0.2",
+  			"fixed_version": "1.2.3",
+  			"rating": "3",
+  			"published_timestamp": 1520382532,
+  			"last_modified_timestamp": 1520382532,
+  			"cpes": [
+  				"CPE-2021-4443"
+  			],
+  			"cves": [
+  				"CVE-2018-345"
+  			]
+  		}]
+  	},
+  	{
+  		"name": "CVE-2018-6432",
+  		"score": 4.2,
+  		"severity": "MEDIUM",
+  		"vectors": "Third and Fourth-Party Vendors",
+  		"description": "Description of CVE-2018-6432",
+  		"score_v3": 2.6,
+  		"vectors_v3": "Third and Fourth-Party Vendors",
+  		"sources": [{
+  			"feed": "Alpine",
+  			"feed_version": "12.29",
+  			"link": "http://whoami.com/CVE-2018-6432",
+  			"package_name": "sqlite3.js",
+  			"package_version": "1.0.2",
+  			"fixed_version": "1.2.3",
+  			"rating": "3",
+  			"published_timestamp": 1522456132,
+  			"last_modified_timestamp": 1522456132,
+  			"cpes": [
+  				"CPE-2021-4443"
+  			],
+  			"cves": [
+  				"CVE-2018-6432"
+  			]
+  		}]
+  	}
+
+]
