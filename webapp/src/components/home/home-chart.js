@@ -1,13 +1,14 @@
 import { renderVerticalBarChart, renderLineChart } from '../../infra/utils/chart-utils.js';
 
 export function renderScoreBarChart(vulsByScore) {
-  let labels = new Array(10);
+  let labels = new Array(11);
   labels.fill('');
-  labels = labels.map((val, index) => `${index}-${index + 1}`);
+  labels = labels.map((val, index) => index > 0 ? `${index -1 }-${index}` : 'No score');
   let datasets = [{
     label: 'Score base vulnerabilities',
     data: vulsByScore.map(vul => vul.length),
     backgroundColor: [
+      'rgba(0, 160, 0, 0.2)',
       'rgba(0, 196, 0, 0.2)',
       'rgba(0, 224, 32, 0.2)',
       'rgba(0, 240, 0, 0.2)',
@@ -20,6 +21,7 @@ export function renderScoreBarChart(vulsByScore) {
       'rgba(255, 0, 0, 0.2)'
     ],
     borderColor: [
+      'rgba(0, 160, 0, 1)',
       'rgba(0, 196, 0, 1)',
       'rgba(0, 224, 32, 1)',
       'rgba(0, 240, 0, 1)',
@@ -40,7 +42,7 @@ export function renderScoreBarChart(vulsByScore) {
 export function renderDateLineChart(vlusByDate) {
   let labels = new Array(10);
   labels.fill('');
-  labels = vlusByDate.map(vul => `${vul.yearMonth.substring(0, 4)}-${vul.yearMonth.substring(4)}`);
+  labels = vlusByDate.map(vul => `${vul.LastModifiedYM.substring(4, 6)}-${vul.LastModifiedYM.substring(0, 4)}`);
   let datasets = [{
     label: 'Month base vulnerabilities (Latest 10)',
     data: vlusByDate.map(vul => vul.vuls.length),
@@ -52,7 +54,7 @@ export function renderDateLineChart(vlusByDate) {
   let element = document.getElementById('date-bar-chart');
   const dateLineChart = renderLineChart(element, datasets, labels);
 
-  
+
 
   return dateLineChart;
 };

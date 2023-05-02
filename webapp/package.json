@@ -1,0 +1,57 @@
+{
+  "name": "vulnerabilities-db",
+  "version": "1.0.0",
+  "description": "Combining vulnerability data sources from multiple orgnizations, displaying one table with advanced filter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx webpack --mode development --watch",
+    "build": "npx webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingzhang-suse/vulnerabilities-db.git"
+  },
+  "keywords": [
+    "Neuvector",
+    "Vulnerability",
+    "CVE",
+    "data"
+  ],
+  "author": "SUSE-Neuvector",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xingzhang-suse/vulnerabilities-db/issues"
+  },
+  "homepage": "https://github.com/xingzhang-suse/vulnerabilities-db#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "ag-grid-community": "^29.2.0",
+    "assert": "^2.0.0",
+    "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
+    "chart.js": "^4.2.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "constants-browserify": "^1.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "jquery": "^3.6.4",
+    "moment": "^2.29.4",
+    "path": "^0.12.7",
+    "popper.js": "^1.16.1",
+    "stream-browserify": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.59.3",
+    "sass-loader": "^13.2.1",
+    "style-loader": "^3.3.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
+  }
+}

@@ -25,7 +25,7 @@ const uploadVulsList2Db = (req, res) => {
 
 const insertFullVulsList = (req, res) => {
   vulInfo.bulk({
-    docs: req.body,
+    docs: req.body.Vulnerabilities,
   }, {include_docs: true}, (err, data) => {
     if (err) {
       res.status(err.statusCode).json(

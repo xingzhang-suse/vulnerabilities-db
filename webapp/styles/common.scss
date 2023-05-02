@@ -113,3 +113,25 @@
 .remove-btn {
 
 }
+
+.package-table {
+  display: table;
+  min-width: 400px;
+  >div:first-child {
+    display: table-header-group;
+    background-color: $neuvector-mid-green-50;
+    font-weight: bolder;
+  }
+  >div {
+    display: table-row-group;
+    >div {
+      padding: 2px 10px;
+      display: table-cell;
+      width: 50%;
+    }
+  }
+}
+
+.main-menu {
+  list-style-type: none;
+}

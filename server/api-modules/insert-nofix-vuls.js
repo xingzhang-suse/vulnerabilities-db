@@ -4,9 +4,12 @@ const dbInstnace = db.getDbInstance();
 const nofixVuls = dbInstnace.use('vulnerabilities_nofix');
 
 const uploadNofixVuls2Db = (req, res) => {
-  let noFixVuls = req.body.filter(vul => {
-    return vul.sources.reduce((result, curr) => {
-      return result = result || !curr.fixed_version
+  let noFixVuls = req.body.Vulnerabilities.filter(vul => {
+    return vul.entries.reduce((result, curr) => {
+      let result4Packages = curr.Packages.reduce((result, curr) => {
+        return result || curr.FixedVersion === '#MINV#';
+      }, false);
+      return result = result || result4Packages
     }, false);
   });
   dbInstnace.destroy('vulnerabilities_nofix', (err, body) => {

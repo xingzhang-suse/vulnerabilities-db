@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const routes = require('./webapp/src/routes.js');
+const routes = require('./src/routes.js');
 
 function loadTemplate(routes) {
   let _routes = routes.routes;
@@ -10,7 +10,7 @@ function loadTemplate(routes) {
     _route = _routes[routeIndex];
     return new HtmlWebpackPlugin({
       filename: `${_route.componentName}.html`,
-      template: path.resolve(__dirname, `webapp/src/components/${_route.componentName}/${_route.componentName}.html`),
+      template: path.resolve(__dirname, `src/components/${_route.componentName}/${_route.componentName}.html`),
       chunks: [_route.componentName],
       inject: true
     });
@@ -18,10 +18,10 @@ function loadTemplate(routes) {
 }
 
 module.exports = {
-  entry: './webapp/src/main.js',
+  entry: './src/main.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
   },
   module: {
     rules: [
@@ -58,20 +58,20 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: './webapp/assets/img',
+          from: './assets/img',
           to: 'img',
         },
         {
-          from: './webapp/styles/eos-icon',
+          from: './styles/eos-icon',
           to: 'eos-icon',
         },
       ],
     }),
     new HtmlWebpackPlugin({
-      template: './webapp/index.html',
+      template: './index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './webapp/src/frame/sidebar/sidebar.html',
+      template: './src/frame/sidebar/sidebar.html',
       filename: 'sidebar.html',
       chunks: ['sidebar'],
       inject: true

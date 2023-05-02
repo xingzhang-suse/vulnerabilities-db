@@ -5,23 +5,37 @@ const utils = require('../utils/common-utils.js');
 const dbInstnace = db.getDbInstance();
 const dateBaseStatisticInfo = dbInstnace.use('vulnerabilities_date_base_statistic');
 
-const uploadGroupedVulsByPublishedDate = (req, res) => {
-  let vuls = req.body.map(vul => {
+const uploadGroupedVulsByLastModifiedDate = (req, res) => {
+  const compareYM = (ym1, ym2) => {
+    if (ym1 > ym2) return 1;
+    else if (ym1 < ym2) return -1;
+    else return 0;
+  };
+  let vuls = req.body.Vulnerabilities.map(vul => {
     let _vul = JSON.parse(JSON.stringify(vul));
-    let mostRecentPublishedTimestamp = vul.sources.reduce((accu, curr) => {
-      return  Math.max(accu, curr.published_timestamp);
-    }, 0);
-    _vul.publishedYM = moment(mostRecentPublishedTimestamp * 1000).format('YYYYMM');
-    delete _vul.sources;
+    let mostRecentLastModifiedYM = '000101';
+    if (vul.Entries) {
+      mostRecentLastModifiedYM = vul.Entries
+      .map(entry => {
+        entry.LastModifiedYM = `${entry.LastModifiedDate.substring(0, 4).toString()}${entry.LastModifiedDate.substring(5, 7).toString()}`;
+        return entry;
+      })
+      .reduce((accu, curr) => {
+        return compareYM(accu, curr.LastModifiedYM) === 1 ? accu : curr.LastModifiedYM;
+      }, '197001');
+    }
+
+    _vul.LastModifiedYM = mostRecentLastModifiedYM;
+    delete _vul.Entries;
     return _vul;
   });
-  let groupedVulsByYearMonth = utils.groupBy(vuls, 'publishedYM');
-  groupedVulsByYearMonth = Object.entries(groupedVulsByYearMonth).map(([k, v]) => {
+  let mostRecentLastModifiedYM = utils.groupBy(vuls, 'LastModifiedYM');
+  mostRecentLastModifiedYM = Object.entries(mostRecentLastModifiedYM).map(([k, v]) => {
     return {
-      yearMonth: k,
+      LastModifiedYM: k,
       vuls: v
     }
-  }).sort((a, b) => b.yearMonth - a.yearMonth).slice(0, 10);
+  }).sort((a, b) => b.LastModifiedYM - a.LastModifiedYM ).slice(0, 10);
   dbInstnace.destroy('vulnerabilities_date_base_statistic', (err, body) => {
     if (err && err.statusCode !== 404) {
       console.error(err);
@@ -34,16 +48,16 @@ const uploadGroupedVulsByPublishedDate = (req, res) => {
           res.status(err.statusCode).json(err);
         } else {
           console.log('vulnerabilities_date_base_statistic table is created');
-          insertDateBaseStatisticData(groupedVulsByYearMonth);
+          insertDateBaseStatisticData(mostRecentLastModifiedYM);
         }
       });
     }
   });
 };
 
-const insertDateBaseStatisticData = (groupedVulsByYearMonth) => {
+const insertDateBaseStatisticData = (mostRecentLastModifiedYM) => {
   dateBaseStatisticInfo.bulk({
-    docs: [{groupedVulsByYearMonth: groupedVulsByYearMonth}],
+    docs: [{groupedVulsByYearMonth: mostRecentLastModifiedYM}],
   }, {include_docs: true}, (err, data) => {
     if (err) {
       console.error(err);
@@ -54,5 +68,5 @@ const insertDateBaseStatisticData = (groupedVulsByYearMonth) => {
 };
 
 module.exports = {
-  uploadGroupedVulsByPublishedDate
+  uploadGroupedVulsByLastModifiedDate
 }

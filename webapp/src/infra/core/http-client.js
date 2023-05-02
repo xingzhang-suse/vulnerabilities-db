@@ -3,12 +3,14 @@ export class HttpClient {
     this.baseURL = baseURL;
   }
 
-  async get(url, queryParams) {
+  async get(url, queryParams, cookies) {
     const params = new URLSearchParams(queryParams);
     const response = await fetch(
       `${this.baseURL}${url}${queryParams ? `?${params.toString()}` : ''}`, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json'
+        },
       }
     );
     const data = await response.json();
@@ -18,7 +20,10 @@ export class HttpClient {
   async post(url, body) {
     const response = await fetch(`${this.baseURL}${url}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': document.cookie
+      },
       body: JSON.stringify(body),
     });
     const data = await response.json();
@@ -30,7 +35,10 @@ export class HttpClient {
     const response = await fetch(
       `${this.baseURL}${url}${queryParams ? `?${params.toString()}` : ''}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': document.cookie
+      },
       body: JSON.stringify(body),
     });
     const data = await response.json();
@@ -42,7 +50,10 @@ export class HttpClient {
     const response = await fetch(
       `${this.baseURL}${url}${queryParams ? `?${params.toString()}` : ''}`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': document.cookie
+      },
       // body: body ? JSON.stringify(body) : null,
     });
     const data = await response.json();
@@ -50,7 +61,15 @@ export class HttpClient {
   }
 
   async delete(url) {
-    const response = await fetch(`${this.baseURL}${url}`, { method: 'DELETE' });
+    const response = await fetch(
+      `${this.baseURL}${url}`, {
+         method: 'DELETE',
+         headers: {
+           'Content-Type': 'application/json',
+           'Cookie': document.cookie
+         }
+       }
+    );
     const data = await response.json();
     return data;
   }

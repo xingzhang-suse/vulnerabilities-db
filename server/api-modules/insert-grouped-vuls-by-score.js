@@ -4,22 +4,21 @@ const dbInstnace = db.getDbInstance();
 const scoreBaseStatisticInfo = dbInstnace.use('vulnerabilities_score_base_statistic');
 
 const uploadGroupedVulsByScore = (req, res) => {
-  let scoreBaseMap = new Array(10);
+  let scoreBaseMap = new Array(11);
   scoreBaseMap.fill(new Array());
   scoreBaseMap = scoreBaseMap.map(elem => {
     return new Array();
   });
-  req.body.forEach(vul => {
-    let index = Math.round(vul.score);
+  req.body.Vulnerabilities.forEach(vul => {
+    let index = vul.Score ? Math.ceil(vul.Score) : 0;
     scoreBaseMap[index].push(
       {
-        name: vul.name,
-        score: vul.score,
-        severity: vul.severity,
-    		vectors: vul.vectors,
-    		description: vul.description,
-    		score_v3: vul.score_v3,
-    		vector_v3: vul.vector_v3,
+        Name: vul.Name,
+        Score: vul.Score,
+        Severity: vul.Severity,
+    		Vectors: vul.Vectors,
+    		ScoreV3: vul.ScoreV3,
+    		VectorsV3: vul.VectorsV3,
       }
     )
   });

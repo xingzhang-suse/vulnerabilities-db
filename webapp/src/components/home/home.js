@@ -73,7 +73,7 @@ export class Home {
   getStatistic() {
     this.client.get('statistic').then(data => {
       this.scoreBarChart = renderScoreBarChart(data.vulsByScore);
-      this.dateLineChart = renderDateLineChart(data.vulsByDate);
+      this.dateLineChart = renderDateLineChart(data.vulsByDate.reverse());
       this.backgroundColorBak4ScoreBarChart = JSON.parse(JSON.stringify(this.scoreBarChart.data.datasets[0].backgroundColor));
       this.backgroundColorBak4DateLineChart = JSON.parse(JSON.stringify(this.dateLineChart.data.datasets[0].backgroundColor));
 
@@ -176,29 +176,29 @@ export class Home {
     const columnDefs4Vuls = [
       {
         headerName: 'Name',
-        field: 'name',
+        field: 'Name',
         cellRenderer: nameRenderer,
         width: 280
       },
       {
-        headerName: 'Description',
-        field: 'description',
-        width:500
-      },
-      {
-        field: 'severity',
+        field: 'Severity',
         hide: true
       },
       {
-        headerName: 'Vectors',
-        field: 'vectors',
+        headerName: 'Vectors V2',
+        field: 'Vectors',
+        width:200
+      },
+      {
+        headerName: 'Vectors V3',
+        field: 'VectorsV3',
         width:200
       },
       {
         headerName: 'Score V2',
-        field: 'score',
+        field: 'Score',
         cellRenderer: params => {
-          return `<div class="progress-bar ${params.data.severity.toLowerCase() === 'high' ? 'bg-danger' : 'bg-warning'}" style="height: 25px; width: ${params.value * 10}%;">${params.value}</div>`;
+          return `<div class="progress-bar ${params.data.Severity.toLowerCase() === 'high' ? 'bg-danger' : 'bg-warning'}" style="height: 25px; width: ${params.value * 10}%;">${params.value}</div>`;
         },
         width: 150,
         minWidth: 150,
@@ -206,9 +206,9 @@ export class Home {
       },
       {
         headerName: 'Score V3',
-        field: 'score_v3',
+        field: 'ScoreV3',
         cellRenderer: params => {
-          return `<div class="progress-bar ${params.data.severity.toLowerCase() === 'high' ? 'bg-danger' : 'bg-warning'}" style="height: 25px; width: ${params.value * 10}%;">${params.value}</div>`;
+          return `<div class="progress-bar ${params.data.Severity.toLowerCase() === 'high' ? 'bg-danger' : 'bg-warning'}" style="height: 25px; width: ${params.value * 10}%;">${params.value}</div>`;
         },
         width: 150,
         minWidth: 150,
